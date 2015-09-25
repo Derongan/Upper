@@ -37,7 +37,7 @@ public class UpperWidgetConfigure extends AppCompatActivity {
 
         SharedPreferences preferences = context.getSharedPreferences("derongan.upper", 0);
 
-        /*ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<String>();
 
         Map<String, ?> allEntries = preferences.getAll();
 
@@ -47,17 +47,13 @@ public class UpperWidgetConfigure extends AppCompatActivity {
             }
         }
 
-        String[] array = list.toArray(new String[list.size()]);
+        UpperArrayAdapter arrayAdapter = new UpperArrayAdapter(context, R.layout.list_item, list);
+        arrayAdapter.insert("Custom", 0);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, list);
-        arrayAdapter.insert("*New*", 0);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setAdapter(arrayAdapter);
-
-        /*ListView listView = (ListView) findViewById(R.id.upper_list);
+        ListView listView = (ListView) findViewById(R.id.upper_list);
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        listView.setAdapter(arrayAdapter);*/
+        listView.setAdapter(arrayAdapter);
 
         Intent intent = getIntent();
 

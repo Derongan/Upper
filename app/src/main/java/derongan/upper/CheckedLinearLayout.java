@@ -54,6 +54,7 @@ public class CheckedLinearLayout extends LinearLayout implements Checkable {
 
             refreshDrawableState();
 
+            //Not really clear if this does anything
             if (mOnCheckedChangeListener != null) {
                 mOnCheckedChangeListener.onCheckedChanged(this, mChecked);
             }
@@ -65,10 +66,12 @@ public class CheckedLinearLayout extends LinearLayout implements Checkable {
         setChecked(!mChecked);
     }
 
+    //Not really clear if this does anything
     public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeListener = listener;
     }
 
+    //Not really clear if this is needed
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
         final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
